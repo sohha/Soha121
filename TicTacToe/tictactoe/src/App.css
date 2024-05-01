@@ -10,10 +10,15 @@ h1 {
   text-align: center;
 }
 
+h4 {
+  text-align: center;
+  margin-top: 25em;
+}
+
 .board {
   display: grid;
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px 100px;
   cursor: pointer;
   position: relative;
 }
@@ -24,14 +29,15 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 0.1em  
 }
 
 .right-border {
-  border-right: 0.2em solid #0074a6;
+  border-right: 0.1em solid #0074a6;
 }
 
 .bottom-border {
-  border-bottom: 0.2em solid #0074a6;
+  border-bottom: 0.1em solid #0074a6;
 }
 
 .x-hover:hover::after {
@@ -52,32 +58,52 @@ h1 {
 .strike-row-1 {
   width: 100%;
   height: 4px;
-  top: 15%;
+  top: 9%;
 }
 .strike-row-2 {
   width: 100%;
   height: 4px;
-  top: 48%;
+  top: 29%;
 }
 .strike-row-3 {
   width: 100%;
   height: 4px;
-  top: 83%;
+  top: 49%;
+}
+.strike-row-4 {
+  width: 100%;
+  height: 4px;
+  top: 69%;
+}
+.strike-row-5 {
+  width: 100%;
+  height: 4px;
+  top: 89%;
 }
 .strike-column-1 {
   height: 100%;
   width: 4px;
-  left: 15%;
+  left: 9%;
 }
 .strike-column-2 {
   height: 100%;
   width: 4px;
-  left: 48%;
+  left: 29%;
 }
 .strike-column-3 {
   height: 100%;
   width: 4px;
-  left: 83%;
+  left: 49%;
+}
+.strike-column-4 {
+  height: 100%;
+  width: 4px;
+  left: 69%;
+}
+.strike-column-5 {
+  height: 100%;
+  width: 4px;
+  left: 89%;
 }
 .strike-diagonal-1 {
   width: 90%;
