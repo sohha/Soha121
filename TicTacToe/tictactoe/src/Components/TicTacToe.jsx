@@ -89,6 +89,17 @@ function TicTacToe() {
     }
   };
 
+  const handleComputerMove = () => {
+    const emptyTiles = tiles
+      .map((tile, index) => (tile === null ? index : null))
+      .filter((index) => index !== null);
+    const randomIndex =
+      emptyTiles[Math.floor(Math.random() * emptyTiles.length)];
+    setTimeout(() => {
+      handleTileClick(randomIndex);
+    }, 1000);
+  };
+
   const handleReset = () => {
     setGameState(GameState.inProgress);
     setTiles(Array(25).fill(null));
@@ -98,9 +109,6 @@ function TicTacToe() {
 
   useEffect(() => {
     checkWinner(tiles, setStrikeClass, setGameState);
-  }, [tiles]);
-
-  useEffect(() => {
     if (tiles.some((tile) => tile !== null)) {
       clickSound.play();
     }
@@ -111,6 +119,12 @@ function TicTacToe() {
       gameOverSound.play();
     }
   }, [gameState]);
+
+  useEffect(() => {
+    if (playerTurn === PLAYER_O && gameState === GameState.inProgress) {
+      handleComputerMove();
+    }
+  }, [playerTurn]);
 
   return (
     <div>
